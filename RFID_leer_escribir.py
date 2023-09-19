@@ -20,8 +20,9 @@ def main():
             print('Tarjeta Asignada a {}!'.format(rfid.read()))
 
         elif option == "2":
-            empleado = json.loads(rfid.read())
+            empleado = rfid.read()
             print("string",empleado)
+            empleado = json.loads(empleado)
             msgBienvenida = f'Bienvinid@ {empleado["name"]} {empleado["surname"]}!, código: {empleado["code"]}, cargo: {empleado["labor"]}, edad: {empleado["age"]}'
             print(msgBienvenida)
 
