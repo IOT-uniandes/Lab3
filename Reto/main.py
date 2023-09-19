@@ -18,12 +18,15 @@ def main():
             # nuevo empleado, asignar puesto
             x = min(ids, key=ids.get)
             ids[x] = f"{id}"
-            assign(x, True)
         else:
             # empleado existente, liberar pueesto
             x = list(ids.keys())[list(ids.values()).index(id)]
             ids[x] = ""
-            assign(x, False)
+
+        for i in ids:
+            if ids[i] != "":
+                assign(i)
+        
         print(ids)
 
 main()

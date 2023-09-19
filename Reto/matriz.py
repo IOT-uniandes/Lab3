@@ -8,10 +8,10 @@ from luma.core.virtual import viewport
 from luma.core.legacy import text, show_message
 from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT
 
-def assign(num:int, paint_free:bool):
-    main(num, paint_free, cascaded=1, block_orientation=90, rotate=0)
+def assign(num:int):
+    main(num, cascaded=1, block_orientation=90, rotate=0)
 
-def main(num:int, paint_free:bool, cascaded, block_orientation, rotate):    
+def main(num:int, cascaded, block_orientation, rotate):    
     # create matrix device
     serial = spi(port=0, device=1, gpio=noop())
     device = max7219(serial, cascaded=cascaded or 1, block_orientation=block_orientation, rotate=rotate or 0)
@@ -28,7 +28,5 @@ def main(num:int, paint_free:bool, cascaded, block_orientation, rotate):
     with canvas(device) as draw:
         if paint_free:
             draw.rectangle(coords[num], outline="red", fill="red")
-        else:
-            draw.rectangle(coords[num], outline="black", fill="black")
 
     time.sleep(1)
