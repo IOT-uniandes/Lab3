@@ -2,7 +2,7 @@ import RFID_RW as rfid
 import json
 
 print("Acerque la tarjeta al lector")
-menu = "Menu Gestión de Puesto de trabajo \n\t1. Asignar Tarjeta a empleado.\n\t2. Leer tarjeta de empleado\n\t3. Salir\n>"
+menu = "Menu Gestión de Puesto de trabajo \n\t1. Asignar Tarjeta a empleado.\n\t2. Leer tarjeta de empleado\n\t3. Salir\n> "
 
 def main():
     while True:
