@@ -23,7 +23,7 @@ def main():
             empleado = rfid.read()
             empleado = empleado.split(",")
             msgBienvenida = f'Bienvinid@ {empleado[0]} {empleado[1]}!, código: {empleado[3]}, cargo: {empleado[2]}, edad: {empleado[4]}'
-            print(msgBienvenida)
+            paint(msgBienvenida)
 
         elif option == "3":
             exit()
