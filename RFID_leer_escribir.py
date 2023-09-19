@@ -1,5 +1,5 @@
 import RFID_RW as rfid
-import json
+from matriz import paint
 
 print("Acerque la tarjeta al lector")
 menu = "Menu Gestión de Puesto de trabajo \n\t1. Asignar Tarjeta a empleado.\n\t2. Leer tarjeta de empleado\n\t3. Salir\n> "
@@ -15,15 +15,13 @@ def main():
             info += input("Ingrese el código del empleado: \n") + ","
             info += input("Ingrese la edad del empleado: \n")
 
-            print(info)
             # write json as string
             rfid.write(info)
-            print('Tarjeta Asignada a {}!'.format(rfid.read()))
+            paint('Tarjeta Asignada a {}!'.format(rfid.read()))
 
         elif option == "2":
             empleado = rfid.read()
             empleado = empleado.split(",")
-            print(empleado)
             msgBienvenida = f'Bienvinid@ {empleado[0]} {empleado[1]}!, código: {empleado[3]}, cargo: {empleado[2]}, edad: {empleado[4]}'
             print(msgBienvenida)
 
