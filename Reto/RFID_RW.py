@@ -21,5 +21,9 @@ def read():
     id,text = reader.read()
     return text
 
+def read_id():
+    id,text = reader.read()
+    return id
+
 def write(text):
     reader.write(text)
