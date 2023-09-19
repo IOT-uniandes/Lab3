@@ -13,7 +13,7 @@ def main():
     }
     clean()
     while True:
-        print("¡Bienvenido!\n> Pasa tu tarjeta RFID para asignarte un puerto de trabajo\n> Pasa tu tarjeta RFID para liberar tu puesto de trabajo")
+        print("¡Bienvenido!\n> Pasa tu tarjeta RFID para asignarte un puerto de trabajo\n> Pasa tu tarjeta RFID para liberar tu puesto de trabajo\n")
         id = rfid.read_id()
         if not list(ids.values()).__contains__(f"{id}"):
             # nuevo empleado, asignar puesto
@@ -25,7 +25,5 @@ def main():
             ids[x] = ""
 
         assign([k for k, v in ids.items() if v != ""])
-        
-        print(ids)
 
 main()
