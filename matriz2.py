@@ -24,8 +24,7 @@ def main(msg, cascaded, block_orientation, rotate):
     with canvas(device) as draw:
         # make a red rectangle
         draw.rectangle((0,0,2,2), outline="red")
-
-        input()
+    input()
 
 if __name__ == "__main__":
     try:
