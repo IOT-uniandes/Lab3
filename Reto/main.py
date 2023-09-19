@@ -17,7 +17,7 @@ def main():
         if id not in ids.values():
             # nuevo empleado, asignar puesto
             x = min(ids, key=ids.get)
-            ids[x] = id
+            ids[x] = f"{id}"
             assign(x, True)
         else:
             # empleado existente, liberar pueesto
