@@ -17,10 +17,11 @@ def main():
 
             # write json as string
             rfid.write(json.dumps(info))
-            print('Tarjeta Asignada a {}!'.format(rfid.read().rstrip()))
+            print('Tarjeta Asignada a {}!'.format(rfid.read()))
 
         elif option == "2":
             empleado = json.loads(rfid.read())
+            print("string",empleado)
             msgBienvenida = f'Bienvinid@ {empleado["name"]} {empleado["surname"]}!, código: {empleado["code"]}, cargo: {empleado["labor"]}, edad: {empleado["age"]}'
             print(msgBienvenida)
 
