@@ -16,6 +16,7 @@ def main():
             info["age"] = input("Ingrese la edad del empleado: \n")
 
             # write json as string
+            print(info)
             rfid.write(json.dumps(info))
             print('Tarjeta Asignada a {}!'.format(rfid.read()))
 
