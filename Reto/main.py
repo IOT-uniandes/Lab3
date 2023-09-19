@@ -23,9 +23,7 @@ def main():
             x = list(ids.keys())[list(ids.values()).index(id)]
             ids[x] = ""
 
-        for i in ids:
-            if ids[i] != "":
-                assign(i)
+        assign([k for k, v in ids.items() if v != ""])
         
         print(ids)
 
