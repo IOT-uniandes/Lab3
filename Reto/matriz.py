@@ -8,24 +8,26 @@ from luma.core.virtual import viewport
 from luma.core.legacy import text, show_message
 from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT
 
-def paint(msg):
-    main(msg, cascaded=1, block_orientation=90, rotate=0)
+def assign(num:int, paint_free:bool):
+    main(num, paint_free, cascaded=1, block_orientation=90, rotate=0)
 
-def main(msg, cascaded, block_orientation, rotate):    
+def main(num:int, paint_free:bool, cascaded, block_orientation, rotate):    
     # create matrix device
     serial = spi(port=0, device=1, gpio=noop())
     device = max7219(serial, cascaded=cascaded or 1, block_orientation=block_orientation, rotate=rotate or 0)
     # debugging purpose
     print("[-] Matrix incializando")
 
-    # debugging purpose
-    print("[-] Imprimiendo: %s" % msg)
-    show_message(device, msg, fill="red", font=proportional(CP437_FONT),scroll_delay=0.1)
+    coords = {
+        1: (0,0,3,3),
+        2: (4,0,7,3),
+        3: (0,4,3,7),
+        4: (4,4,7,7),
+    }
 
-if __name__ == "__main__":
-    try:
-        main("Hola mundo de la electronica en el internet de todas las cosas", cascaded=1, block_orientation=90, rotate=0)
-    except KeyboardInterrupt:
-        pass
-
-
+    while True:
+        with canvas(device) as draw:
+            if paint_free:
+                draw.rectangle(coords[num], outline="red", fill="red")
+            else:
+                draw.rectangle(coords[num], outline="black", fill="black")
