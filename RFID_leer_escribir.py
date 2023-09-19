@@ -16,4 +16,7 @@ def main():
             msgBienvenida = 'Bienvinid@ {}!'.format(empleado.rstrip())
             print(msgBienvenida)
 
+        elif option == "3":
+            exit()
+
 main()
