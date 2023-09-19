@@ -25,9 +25,8 @@ def main(num:int, paint_free:bool, cascaded, block_orientation, rotate):
         4: (4,4,7,7),
     }
 
-    while True:
-        with canvas(device) as draw:
-            if paint_free:
-                draw.rectangle(coords[num], outline="red", fill="red")
-            else:
-                draw.rectangle(coords[num], outline="black", fill="black")
+    with canvas(device) as draw:
+        if paint_free:
+            draw.rectangle(coords[num], outline="red", fill="red")
+        else:
+            draw.rectangle(coords[num], outline="black", fill="black")
