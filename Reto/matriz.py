@@ -30,3 +30,5 @@ def main(num:int, paint_free:bool, cascaded, block_orientation, rotate):
             draw.rectangle(coords[num], outline="red", fill="red")
         else:
             draw.rectangle(coords[num], outline="black", fill="black")
+
+    time.sleep(1)

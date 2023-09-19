@@ -14,6 +14,7 @@ def main():
     while True:
         print("¡Bienvenido!\n> Pasa tu tarjeta RFID para asignarte un puerto de trabajo\n> Pasa tu tarjeta RFID para liberar tu puesto de trabajo")
         id = rfid.read_id()
+        print(ids)
         if id not in ids.values():
             # nuevo empleado, asignar puesto
             x = min(ids, key=ids.get)
