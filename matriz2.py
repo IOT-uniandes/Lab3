@@ -21,10 +21,10 @@ def main(msg, cascaded, block_orientation, rotate):
     # debugging purpose
     print("[-] Imprimiendo: %s" % msg)
     #show_message(device, msg, fill="red", font=proportional(CP437_FONT),scroll_delay=0.1)
-    with canvas(device) as draw:
-        # make a red rectangle
-        draw.rectangle((0,0,2,2), outline="red")
-    input()
+    while True:
+        with canvas(device) as draw:
+            # make a red rectangle
+            draw.rectangle((0,0,2,2), outline="red")
 
 if __name__ == "__main__":
     try:
