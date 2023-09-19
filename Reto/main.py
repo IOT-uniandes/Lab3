@@ -1,5 +1,5 @@
 import RFID_RW as rfid
-from matriz import assign
+from matriz import assign, clean
 
 print("Acerque la tarjeta al lector")
 menu = "Menu Gestión de Puesto de trabajo \n\t1. Asignar Tarjeta a empleado.\n\t2. Leer tarjeta de empleado\n\t3. Salir\n> "
@@ -11,6 +11,7 @@ def main():
         3: "",
         4: "",
     }
+    clean()
     while True:
         print("¡Bienvenido!\n> Pasa tu tarjeta RFID para asignarte un puerto de trabajo\n> Pasa tu tarjeta RFID para liberar tu puesto de trabajo")
         id = rfid.read_id()

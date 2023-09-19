@@ -11,6 +11,9 @@ from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_
 def assign(sits:list):
     main(sits, cascaded=1, block_orientation=90, rotate=0)
 
+def clean():
+    main([], cascaded=1, block_orientation=90, rotate=0)
+
 def main(sits:list, cascaded, block_orientation, rotate):    
     # create matrix device
     serial = spi(port=0, device=1, gpio=noop())
