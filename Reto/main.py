@@ -21,7 +21,7 @@ def main():
             ids[x] = f"{id}"
         else:
             # empleado existente, liberar pueesto
-            x = list(ids.keys())[list(ids.values()).index(id)]
+            x = list(ids.keys())[list(ids.values()).index(f"{id}")]
             ids[x] = ""
 
         assign([k for k, v in ids.items() if v != ""])
