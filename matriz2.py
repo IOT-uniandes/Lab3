@@ -22,9 +22,9 @@ def main(msg, cascaded, block_orientation, rotate):
     print("[-] Imprimiendo: %s" % msg)
     #show_message(device, msg, fill="red", font=proportional(CP437_FONT),scroll_delay=0.1)
     with canvas(device) as draw:
-        # make a red rectangle and leave it on the matrix
+        # make a red rectangle
         draw.rectangle((0,0,2,2), outline="red")
-        time.sleep(1)
+
         input()
 
 if __name__ == "__main__":
