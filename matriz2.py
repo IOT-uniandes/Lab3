@@ -21,7 +21,8 @@ def main(msg, cascaded, block_orientation, rotate):
     # debugging purpose
     print("[-] Imprimiendo: %s" % msg)
     #show_message(device, msg, fill="red", font=proportional(CP437_FONT),scroll_delay=0.1)
-    draw.rectangle((1,1,7,7), fill="red")
+    with canvas(device) as draw:
+        draw.rectangle((1,1,7,7), fill="red")
 
 if __name__ == "__main__":
     try:
