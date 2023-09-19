@@ -22,8 +22,10 @@ def main(msg, cascaded, block_orientation, rotate):
     print("[-] Imprimiendo: %s" % msg)
     #show_message(device, msg, fill="red", font=proportional(CP437_FONT),scroll_delay=0.1)
     with canvas(device) as draw:
-        draw.rectangle((1,1,7,7), fill="red")
-        time.sleep(1000)
+        # make a red rectangle and leave it on the matrix
+        draw.rectangle(device.bounding_box, outline="red", fill="black")
+        text(draw, (0, 0), msg, fill="red", font=proportional(CP437_FONT))
+        time.sleep(5)
 
 if __name__ == "__main__":
     try:
