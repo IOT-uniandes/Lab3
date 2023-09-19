@@ -17,12 +17,15 @@ def main():
 
             # write json as string
             rfid.write(info)
-            paint('Tarjeta Asignada a {}!'.format(rfid.read()))
+            txt = rfid.read()
+            print("Tarjeta Asignada a {}!".format(txt))
+            paint('Tarjeta Asignada a {}!'.format(txt))
 
         elif option == "2":
             empleado = rfid.read()
             empleado = empleado.split(",")
             msgBienvenida = f'Bienvinido/a {empleado[0]} {empleado[1]}, codigo: {empleado[3]}, cargo: {empleado[2]}, edad: {empleado[4]}'
+            print(msgBienvenida)
             paint(msgBienvenida)
 
         elif option == "3":
