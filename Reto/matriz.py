@@ -26,7 +26,6 @@ def main(num:int, cascaded, block_orientation, rotate):
     }
 
     with canvas(device) as draw:
-        if paint_free:
-            draw.rectangle(coords[num], outline="red", fill="red")
+        draw.rectangle(coords[num], outline="red", fill="red")
 
     time.sleep(1)
