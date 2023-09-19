@@ -23,7 +23,7 @@ def main(msg, cascaded, block_orientation, rotate):
     #show_message(device, msg, fill="red", font=proportional(CP437_FONT),scroll_delay=0.1)
     with canvas(device) as draw:
         # make a red rectangle and leave it on the matrix
-        draw.rectangle(device.bounding_box, outline="red", fill="black")
+        draw.rectangle((0,0,2,2), outline="red", fill="black")
         time.sleep(5)
 
 if __name__ == "__main__":
